@@ -5,17 +5,22 @@ using UnityEngine;
 public class flying : MonoBehaviour
 
 {
-    public float forwardSpeed=25f;
-    private float activeForwardSpeed;
+    public float forwardSpeed = 25f, strafeSpeed = 7.5f, hoverSpeed = 5f;
+    private float activeForwardSpeed, activeStrafeSpeed, activeHoverSpeed;
     // Start is called before the first frame update
     void Start()
     {
-      
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        activeForwardSpeed = Input.GetAxisRaw("Vertical");
+        activeForwardSpeed = Input.GetAxisRaw("Vertical") * forwardSpeed;
+        activeStrafeSpeed = Input.GetAxisRaw("Horizontal") * strafeSpeed;
+        activeHoverSpeed = Input.GetAxisRaw("Hover") * hoverSpeed;
+
+        transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
+        transform.position += (transform.right * activeStrafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime);
     }
 }

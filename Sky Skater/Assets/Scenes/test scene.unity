@@ -380,6 +380,7 @@ Transform:
   m_PrefabInstance: {fileID: 768184809}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &1915266720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,3 +405,5 @@ MonoBehaviour:
 >>>>>>> parent of d9005bb (update flying script)
 =======
 >>>>>>> parent of c4702a5 (,)
+=======
+>>>>>>> parent of d9005bb (update flying script)

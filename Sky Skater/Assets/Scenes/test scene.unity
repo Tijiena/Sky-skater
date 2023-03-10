@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -778,7 +778,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a418631b51a1b4e64adc27bcf594fa5e, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a418631b51a1b4e64adc27bcf594fa5e, type: 3}
       propertyPath: m_LocalScale.x
@@ -1276,7 +1276,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f3bf5bdbb9c9b4c46950561955724fc5, type: 3}
   m_PrefabInstance: {fileID: 1188679131}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1537746546
+--- !u!4 &1537746547 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f3bf5bdbb9c9b4c46950561955724fc5, type: 3}
+  m_PrefabInstance: {fileID: 1188679131}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1537746548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1288,13 +1293,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b0c568a575ee84a9886c3598a9dc5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FlySpeed: 5
+  FlySpeed: 20
   YawAmount: 120
---- !u!4 &1537746547 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f3bf5bdbb9c9b4c46950561955724fc5, type: 3}
-  m_PrefabInstance: {fileID: 1188679131}
+  rig: {fileID: 1537746550}
+--- !u!65 &1537746549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537746545}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1537746550
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537746545}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1572582631 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4116998666039258350, guid: a418631b51a1b4e64adc27bcf594fa5e, type: 3}

@@ -7,6 +7,7 @@ public class flying1 : MonoBehaviour
     public float FlySpeed = 20;
     public float YawAmount = 120;
     private float Yaw;
+    public Rigidbody rig;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +29,15 @@ public class flying1 : MonoBehaviour
         { FlySpeed = 40; }
         if (Input.GetKeyUp(KeyCode.Space))
         { FlySpeed = 20; }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "building")
+        {
+            FlySpeed = 0;
+           rig.useGravity = false;
+        }
+        
     }
 }

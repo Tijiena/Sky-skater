@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class flying1 : MonoBehaviour
 {
-    public float FlySpeed = 20;
+    public float FlySpeed = 60;
     public float YawAmount = 120;
     private float Yaw;
     public Rigidbody rig;
@@ -26,9 +26,9 @@ public class flying1 : MonoBehaviour
         transform.localRotation = Quaternion.Euler(Vector3.up * Yaw+Vector3.right*pitch+Vector3.forward*roll);
 
         if (Input.GetKeyDown(KeyCode.Space))
-        { FlySpeed = 40; }
+        { FlySpeed = 120; }
         if (Input.GetKeyUp(KeyCode.Space))
-        { FlySpeed = 20; }
+        { FlySpeed = 60; }
     }
 
     private void OnCollisionEnter(Collision collision)

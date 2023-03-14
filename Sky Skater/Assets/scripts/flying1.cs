@@ -8,10 +8,11 @@ public class flying1 : MonoBehaviour
     public float YawAmount = 120;
     private float Yaw;
     public Rigidbody rig;
+    private Vector3 respawnPoint;
     // Start is called before the first frame update
     void Start()
     {
-        
+        respawnPoint = transform.position;
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class flying1 : MonoBehaviour
         {
             FlySpeed = 0;
            rig.useGravity = false;
+            transform.position = respawnPoint;
         }
         
     }

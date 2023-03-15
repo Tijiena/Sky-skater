@@ -39,7 +39,9 @@ public class flying1 : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {   UI.SetActive(false);
                 transform.position = respawnPoint;
-                
+                transform.localRotation = Quaternion.Euler(-13f, 0, 0);
+
+
             }
         }
     }
@@ -50,8 +52,7 @@ public class flying1 : MonoBehaviour
         {
             FlySpeed = 0;
             UI.SetActive(true);
-            if (Input.GetKeyUp(KeyCode.Space))
-            { FlySpeed = 0; }
+           
 
         }
 

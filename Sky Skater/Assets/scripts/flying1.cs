@@ -9,16 +9,17 @@ public class flying1 : MonoBehaviour
     public float YawAmount = 120;
     private float Yaw;
     public Rigidbody rig;
-    private Vector3 respawnPoint;
+    public Vector3 respawnPoint;
+  //  public Quaternion respawnRotation;
     [SerializeField] private GameObject UI;
-    // Start is called before the first frame update
+    
     void Start()
     {
         respawnPoint = transform.position;
+       // respawnRotation = transform.localRotation;
         UI.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.position += transform.forward * FlySpeed * Time.deltaTime;
@@ -34,12 +35,13 @@ public class flying1 : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         { FlySpeed = 120; }
 
-        if (UI.scene.IsValid())
+        if (UI.activeSelf)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {   UI.SetActive(false);
                 transform.position = respawnPoint;
-                transform.localRotation = Quaternion.Euler(-13f, 0, 0);
+                transform.localRotation = Quaternion.Euler(13.154f, 0, 0);
+                //transform.localRotation = respawnRotation;
 
 
             }

@@ -40,7 +40,9 @@ public class flying1 : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {   UI.SetActive(false);
                 transform.position = respawnPoint;
-                transform.localRotation = Quaternion.Euler(13.154f, 0, 0);
+                Yaw = 0;
+                pitch = 0;
+                roll = 0;
                 //transform.localRotation = respawnRotation;
 
 

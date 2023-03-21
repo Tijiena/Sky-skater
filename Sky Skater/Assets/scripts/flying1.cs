@@ -10,7 +10,7 @@ public class flying1 : MonoBehaviour
     private float Yaw;
     public Rigidbody rig;
     public Vector3 respawnPoint;
-    public GameObject bullet;
+    public GameObject bulletPrefab;
     private Vector3 aim;
     [SerializeField] private GameObject UI;
     
@@ -21,12 +21,7 @@ public class flying1 : MonoBehaviour
     }
 
     void Update()
-    {
-        aim = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-       
-      
-
-        transform.position += transform.forward * FlySpeed * Time.deltaTime;
+    {   transform.position += transform.forward * FlySpeed * Time.deltaTime;
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         Yaw += horizontalInput * YawAmount * Time.deltaTime;
@@ -52,9 +47,13 @@ public class flying1 : MonoBehaviour
 
             }
         }
+        aim = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
         {
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.transform.LookAt(aim);
+            Rigidbody b = bullet.GetComponent<Rigidbody>();
+            b.AddRelativeForce(Vector3.forward * 10);
         }
     }
 

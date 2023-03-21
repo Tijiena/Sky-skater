@@ -11,6 +11,7 @@ public class flying1 : MonoBehaviour
     public Rigidbody rig;
     public Vector3 respawnPoint;
     public GameObject bulletPrefab;
+    public Transform bulletSpawnPoint;
     private Vector3 aim;
     [SerializeField] private GameObject UI;
     
@@ -47,13 +48,12 @@ public class flying1 : MonoBehaviour
 
             }
         }
-        aim = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0))
+       // aim = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetKey(KeyCode.Mouse0))
         {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.transform.LookAt(aim);
-            Rigidbody b = bullet.GetComponent<Rigidbody>();
-            b.AddRelativeForce(Vector3.forward * 10);
+            var bullet = Instantiate(bulletPrefab,bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            //bullet.transform.LookAt(aim);
+            bullet.GetComponent<Rigidbody>().velocity=bulletSpawnPoint.forward*10;
         }
     }
 

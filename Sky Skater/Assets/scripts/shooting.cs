@@ -7,23 +7,24 @@ public class shooting : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
     private Vector3 aim;
-    public Camera cam;
+    private Camera cam;
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        cam = Camera.main;
         Vector3 mousePos = Input.mousePosition;
         aim = cam.ScreenToWorldPoint(mousePos);
         if (Input.GetKey(KeyCode.Mouse0))
         {   bulletSpawnPoint.transform.LookAt(aim);
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
             bullet.transform.LookAt(aim);
-            bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * -100;
+            bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * -500;
         }
     }
 }

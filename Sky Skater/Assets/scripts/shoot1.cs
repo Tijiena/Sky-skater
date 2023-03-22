@@ -4,27 +4,23 @@ using UnityEngine;
 
 public class shoot1 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float force;
-    public GameObject bulletPrefab;
-    public GameObject gunEnd;
-    private Vector3 aim;
-    // Update is called once per frame
+    
+    public GameObject bulletPrefab; 
+    public Transform bulletSpawn;
+    public float bulletSpeed = 30.0f; 
+
     void Update()
     {
-
-
-
-        Vector3 mousePos = Input.mousePosition;
-        aim = Camera.main.ScreenToWorldPoint(mousePos);
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            gunEnd.transform.LookAt(aim);
-            GameObject bullet = Instantiate(bulletPrefab, gunEnd.transform.position, Quaternion.identity);
-            bullet.transform.LookAt(aim);
-            Rigidbody b = bullet.GetComponent<Rigidbody>();
-            b.AddRelativeForce(Vector3.forward * force);
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition.z =  10.0f;
+            Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity); 
+            Vector3 bulletDirection = (targetPosition - bulletSpawn.position).normalized; 
+            bullet.GetComponent<Rigidbody>().velocity = bulletDirection * bulletSpeed; 
         }
     }
 }
+    

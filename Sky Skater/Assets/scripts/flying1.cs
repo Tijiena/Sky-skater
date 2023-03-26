@@ -13,13 +13,12 @@ public class flying1 : MonoBehaviour
     [SerializeField] private GameObject UI;
     [SerializeField] ParticleSystem explosion = null;
 
-
     void Start()
     {
         respawnPoint = transform.position;
         UI.SetActive(false);
 
-        audiosource = GetComponent<AudioSource>();      //get audio
+        crash = GetComponent<AudioSource>();      //get crash audio
 
     }
 
@@ -51,7 +50,8 @@ public class flying1 : MonoBehaviour
         }
     }
 
-    AudioSource audiosource;            // define audio     
+    AudioSource crash;           
+    AudioSource propeller;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -60,9 +60,12 @@ public class flying1 : MonoBehaviour
             FlySpeed = 0;
             UI.SetActive(true);
 
-            audiosource.Play();
+            crash.Play();
 
             Explode();
+
+            propeller.Stop();
+
 
         }
 

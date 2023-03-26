@@ -17,6 +17,8 @@ public class flying1 : MonoBehaviour
         respawnPoint = transform.position;
         UI.SetActive(false);
 
+        audiosource = GetComponent<AudioSource>();      //get audio
+
     }
 
     void Update()
@@ -47,12 +49,16 @@ public class flying1 : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision collision)
+    AudioSource audiosource;            // define audio
+
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "building")
         {
             FlySpeed = 0;
             UI.SetActive(true);
+
+            audiosource.Play();
            
 
         }

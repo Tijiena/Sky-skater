@@ -24,7 +24,7 @@ public class shooting : MonoBehaviour
         {   bulletSpawnPoint.transform.LookAt(aim);
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
             bullet.transform.LookAt(aim);
-            bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * -500;
+            
         }
     }
 }

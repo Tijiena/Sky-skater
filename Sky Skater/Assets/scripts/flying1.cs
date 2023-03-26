@@ -51,7 +51,7 @@ public class flying1 : MonoBehaviour
     }
 
     AudioSource crash;           
-    AudioSource propeller;
+    //AudioSource propeller;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -64,7 +64,7 @@ public class flying1 : MonoBehaviour
 
             Explode();
 
-            propeller.Stop();
+
 
 
         }

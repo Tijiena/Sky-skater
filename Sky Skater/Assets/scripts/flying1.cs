@@ -11,7 +11,9 @@ public class flying1 : MonoBehaviour
     public Rigidbody rig;
     public Vector3 respawnPoint;
     [SerializeField] private GameObject UI;
-    
+    [SerializeField] ParticleSystem explosion = null;
+
+
     void Start()
     {
         respawnPoint = transform.position;
@@ -49,7 +51,7 @@ public class flying1 : MonoBehaviour
         }
     }
 
-    AudioSource audiosource;            // define audio
+    AudioSource audiosource;            // define audio     
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -59,9 +61,15 @@ public class flying1 : MonoBehaviour
             UI.SetActive(true);
 
             audiosource.Play();
-           
+
+            Explode();
 
         }
 
+    }
+
+    public void Explode()
+    {
+        explosion.Play();
     }
 }

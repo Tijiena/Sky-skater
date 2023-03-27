@@ -12,13 +12,15 @@ public class flying1 : MonoBehaviour
     public Vector3 respawnPoint;
     [SerializeField] private GameObject UI;
     [SerializeField] ParticleSystem explosion = null;
+    [SerializeField] private float volumeOnCollision = 0;
 
     void Start()
     {
         respawnPoint = transform.position;
         UI.SetActive(false);
 
-        crash = GetComponent<AudioSource>();      
+        crash = GetComponent<AudioSource>();
+
 
     }
 
@@ -50,7 +52,7 @@ public class flying1 : MonoBehaviour
         }
     }
 
-    AudioSource crash;           
+    AudioSource crash;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -62,8 +64,6 @@ public class flying1 : MonoBehaviour
             crash.Play();
 
             Explode();
-
-    
 
         }
 

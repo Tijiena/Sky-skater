@@ -18,7 +18,7 @@ public class flying1 : MonoBehaviour
         respawnPoint = transform.position;
         UI.SetActive(false);
 
-        crash = GetComponent<AudioSource>();      //get crash audio
+        crash = GetComponent<AudioSource>();      
 
     }
 
@@ -51,7 +51,6 @@ public class flying1 : MonoBehaviour
     }
 
     AudioSource crash;           
-    //AudioSource propeller;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -64,8 +63,7 @@ public class flying1 : MonoBehaviour
 
             Explode();
 
-
-
+    
 
         }
 

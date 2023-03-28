@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class shoot1 : MonoBehaviour
 {
-    
+    public float FlySpeed = 120;
     public GameObject bulletPrefab; 
     public Transform bulletSpawn;
     public float bulletSpeed = 30.0f; 
@@ -19,7 +19,7 @@ public class shoot1 : MonoBehaviour
 
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity); 
             Vector3 bulletDirection = (targetPosition - bulletSpawn.position).normalized; 
-            bullet.GetComponent<Rigidbody>().velocity = bulletDirection * bulletSpeed; 
+            bullet.GetComponent<Rigidbody>().velocity+=bulletDirection * (bulletSpeed+FlySpeed); 
         }
     }
 }

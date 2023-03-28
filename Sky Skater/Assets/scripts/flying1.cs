@@ -35,9 +35,9 @@ public class flying1 : MonoBehaviour
         transform.localRotation = Quaternion.Euler(Vector3.up * Yaw + Vector3.right * pitch + Vector3.forward * roll);
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
-        { FlySpeed = 180; }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
         { FlySpeed = 90; }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        { FlySpeed = 65; }
 
         if (UI.activeSelf)
         {

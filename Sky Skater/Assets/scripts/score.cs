@@ -29,7 +29,7 @@ public class score : MonoBehaviour
     {
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("balloon2");
         count = objectsWithTag.Length;
-        countText.text = "Balloon:" + count;
+        countText.text = "Balloon: " + count;
 
         time += pointIncreasedPerSecond * Time.deltaTime;
 

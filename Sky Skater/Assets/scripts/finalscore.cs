@@ -11,7 +11,7 @@ public class finalscore : MonoBehaviour
 
     public void Start()
     {
-        lastscore.text="Score:"+score.totalscore;
+        lastscore.text="Score: "+score.totalscore;
     }
 
 }

@@ -11,11 +11,11 @@ public class score : MonoBehaviour
     private int count;
 
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("balloon");
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("balloon2");
         count = objectsWithTag.Length;
-        countText.text = "balloon:" + count;
+        countText.text = "Balloon:" + count;
 
     }
 }

@@ -15,18 +15,18 @@ public class LevelTimer : MonoBehaviour
         scoreAmount = 0f;
         pointIncreasedPerSecond = 1f;
 
-        void SetHighscore()
-        {
-            PlayerPrefs.SetInt("Highscore", (int)scoreAmount);
-            highscore.text = PlayerPrefs.GetInt("Highscore").ToString();
+        //void SetHighscore()
+        //{
+          //  PlayerPrefs.SetInt("Highscore", (int)scoreAmount);
+            //highscore.text = PlayerPrefs.GetInt("Highscore").ToString();
 
-            if (PlayerPrefs.GetInt("Highscore") < scoreAmount)
-            {
-                SetHighscore();
-            }
+           // if (PlayerPrefs.GetInt("Highscore") < scoreAmount)
+            //{
+              //  SetHighscore();
+            //}
 
 
-        }
+        //}
 
     }
 

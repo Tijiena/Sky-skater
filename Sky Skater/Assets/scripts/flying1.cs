@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class flying1 : MonoBehaviour
 {
-    public float FlySpeed = 120;
+    public float FlySpeed = 90;
     public float YawAmount = 120;
     private float Yaw;
     public Rigidbody rig;
@@ -35,9 +35,9 @@ public class flying1 : MonoBehaviour
         transform.localRotation = Quaternion.Euler(Vector3.up * Yaw + Vector3.right * pitch + Vector3.forward * roll);
 
         if (Input.GetKeyDown(KeyCode.Space))
-        { FlySpeed = 240; }
+        { FlySpeed = 180; }
         if (Input.GetKeyUp(KeyCode.Space))
-        { FlySpeed = 120; }
+        { FlySpeed = 90; }
 
         if (UI.activeSelf)
         {

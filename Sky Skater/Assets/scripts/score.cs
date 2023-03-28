@@ -7,16 +7,15 @@ using UnityEngine.UI;
 public class score : MonoBehaviour
 
 {
-    public string tagToCount;
     public Text countText;
     private int count;
 
     // Start is called before the first frame update
-    void Update()
+    void Start()
     {
-        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(tagToCount);
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("balloon");
         count = objectsWithTag.Length;
-        countText.text = "Number of objects with the \"" + tagToCount + "\" tag: " + count;
+        countText.text = "balloon:" + count;
 
     }
 }

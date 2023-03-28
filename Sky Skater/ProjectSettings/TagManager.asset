@@ -6,6 +6,7 @@ TagManager:
   tags:
   - building
   - balloon
+  - balloon2
   layers:
   - Default
   - TransparentFX

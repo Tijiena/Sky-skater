@@ -25,7 +25,8 @@ public class flying1 : MonoBehaviour
     }
 
     void Update()
-    {   transform.position += transform.forward * FlySpeed * Time.deltaTime;
+    {
+        transform.position += transform.forward * FlySpeed * Time.deltaTime;
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         Yaw += horizontalInput * YawAmount * Time.deltaTime;

@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    public float FlySpeed = 120;
-    public float YawAmount = 120;
-    private float Yaw;
-    public Rigidbody rig;
+    public float life = 4;
+    
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        Destroy(gameObject, life);
     }
 
     // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision collision)
     {
-        transform.position += transform.forward * FlySpeed * Time.deltaTime;
-     
+        if (collision.gameObject.tag == "balloon")
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);  }
     }
 }
